@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b0c11989-38cd-49e1-a080-63045e60eab8" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Go File" />
+      </list>
+    </option>
+  </component>
+  <component name="GOROOT" path="/usr/local/go" />
+  <component name="GoLibraries">
+    <option name="indexEntireGoPath" value="false" />
+  </component>
+  <component name="ProjectId" id="1Ytpz60Q8cOmAJBKiH2DPELNmuq" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultGoTemplateProperty" value="Go File" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="configurable.Global.GOPATH.is.expanded" value="true" />
+    <property name="configurable.Module.GOPATH.is.expanded" value="false" />
+    <property name="configurable.Project.GOPATH.is.expanded" value="true" />
+    <property name="go.import.settings.migrated" value="true" />
+    <property name="last_opened_file_path" value="$USER_HOME$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="com.goide.configuration.GoLibrariesConfigurableProvider" />
+  </component>
+  <component name="RunManager">
+    <configuration name="go build app.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="throttle" />
+      <working_directory value="$PROJECT_DIR$/" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/src/app/app.go" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Go Build.go build app.go" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$" />
+    </ignored-roots>
+  </component>
+  <component name="VgoProject">
+    <integration-enabled>true</integration-enabled>
+    <auto-vendoring-mode>false</auto-vendoring-mode>
+    <proxy>https://goproxy.cn</proxy>
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="3798" height="661" key="GridCell.Tab.0.bottom" timestamp="1583773261391">
+      <screen x="0" y="0" width="3840" height="2160" />
+    </state>
+    <state width="3798" height="661" key="GridCell.Tab.0.bottom/0.0.3840.2160@0.0.3840.2160" timestamp="1583773261391" />
+    <state width="3798" height="661" key="GridCell.Tab.0.center" timestamp="1583773261390">
+      <screen x="0" y="0" width="3840" height="2160" />
+    </state>
+    <state width="3798" height="661" key="GridCell.Tab.0.center/0.0.3840.2160@0.0.3840.2160" timestamp="1583773261389" />
+    <state width="3798" height="661" key="GridCell.Tab.0.left" timestamp="1583773261389">
+      <screen x="0" y="0" width="3840" height="2160" />
+    </state>
+    <state width="3798" height="661" key="GridCell.Tab.0.left/0.0.3840.2160@0.0.3840.2160" timestamp="1583773261389" />
+    <state width="3798" height="661" key="GridCell.Tab.0.right" timestamp="1583773261390">
+      <screen x="0" y="0" width="3840" height="2160" />
+    </state>
+    <state width="3798" height="661" key="GridCell.Tab.0.right/0.0.3840.2160@0.0.3840.2160" timestamp="1583773261390" />
+    <state x="1429" y="719" key="SettingsEditor" timestamp="1583773616795">
+      <screen x="0" y="0" width="3840" height="2160" />
+    </state>
+    <state x="1429" y="719" key="SettingsEditor/0.0.3840.2160@0.0.3840.2160" timestamp="1583773616795" />
+    <state x="1650" y="924" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1583773484652">
+      <screen x="0" y="0" width="3840" height="2160" />
+    </state>
+    <state x="1650" y="924" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.0.3840.2160@0.0.3840.2160" timestamp="1583773484652" />
+  </component>
+</project>
