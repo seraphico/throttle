@@ -45,7 +45,6 @@ func (tcm *TcMgr) ClassfulShow(dev string) (err error) {
 			break
 		}
 	}
-	fmt.Println(cmdoutputlines)
 	return
 }
 

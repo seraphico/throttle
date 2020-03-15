@@ -40,7 +40,7 @@ func main() {
 					if err = modules.GlobTcProMgr.Add(
 						c.String(`i`),
 						c.String(`r`),
-						`100`,
+						c.String(`C`),
 						c.String(`t`),
 					); err != nil {
 						return cli.NewExitError(err, 1)
@@ -70,6 +70,11 @@ func main() {
 				&cli.StringFlag{
 					Name:  "rate,r",
 					Usage: "用于在add操作时指定带宽",
+					Value: `100`,
+				},
+				&cli.StringFlag{
+					Name:  "ceil,C",
+					Usage: "用于指定突发带宽",
 					Value: `100`,
 				},
 			},

@@ -171,7 +171,7 @@ func (tcm *TcMgr) filterShow(dev string, prefid string) (li []string, err error)
 					err = e
 					return
 				}
-				li = append( li, lis[2],lis[18], ratem[`rate`],  ratem[`ceil`])
+				li = append( li, lis[2],lis[18], prefid, ratem[`rate`],  ratem[`ceil`])
 
 			}
 			if strings.Contains(line, `match`) {

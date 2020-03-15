@@ -53,8 +53,8 @@ func (tcm *TcProMgr) Show(dev string) (err error) {
 		return
 	}
 	table := tablewriter.NewWriter(os.Stdout)
-	table.SetHeader([]string{`qdiscId`, `classId`, `rate`, `ceil`, `Address segment`})
-	table.SetFooter([]string{``,``,``, `Total Filters`, strconv.Itoa(len(data))})
+	table.SetHeader([]string{`qdiscId`, `classId`, `filterId`, `rate`, `ceil`, `Address segment`})
+	table.SetFooter([]string{``,``,``,``, `Total Filters`, strconv.Itoa(len(data))})
 	table.SetAutoMergeCells(true)
 	table.SetRowLine(true)
 	table.AppendBulk(data)

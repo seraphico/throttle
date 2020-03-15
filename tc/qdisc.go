@@ -21,16 +21,12 @@ func (tcm *TcMgr) qdiscRootHandle(dev string) (err error) {
 	var (
 		cmd     *exec.Cmd
 		command string
-		out     []byte
 	)
 	command = fmt.Sprintf(`tc qdisc add dev %s root handle %s:%s htb default %s`, dev, MAJOR, MINOR, DEFAULT)
 	cmd = exec.Command(`/usr/bin/sh`, `-c`, command)
-	if out, err = cmd.Output(); err != nil {
+	if _, err = cmd.Output(); err != nil {
 		return
 	}
-
-	fmt.Println(string(out))
-
 	return
 }
 
@@ -46,6 +42,7 @@ func (tcm *TcMgr) qdiscRootHandleStatus(dev string) bool {
 	out, _ = cmd.Output()
 	return strings.Contains(string(out), `htb`)
 }
+
 /*func (tc *TcMgr) QdiscShow(dev string) (rootid string, err error)  {
 	var (
 		cmd     *exec.Cmd
