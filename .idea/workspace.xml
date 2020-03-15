@@ -38,7 +38,7 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.goide.configuration.GoLibrariesConfigurableProvider" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Go Test.TestInitTcMgr in throttle/tc">
     <configuration name="go build app.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="throttle" />
       <working_directory value="$PROJECT_DIR$/" />
@@ -46,8 +46,20 @@
       <filePath value="$PROJECT_DIR$/src/app/app.go" />
       <method v="2" />
     </configuration>
+    <configuration name="TestInitTcMgr in throttle/tc" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="throttle" />
+      <working_directory value="$PROJECT_DIR$/tc" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="throttle/tc" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <pattern value="^TestInitTcMgr$" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Test.TestInitTcMgr in throttle/tc" />
         <item itemvalue="Go Build.go build app.go" />
       </list>
     </recent_temporary>
@@ -66,26 +78,46 @@
     <proxy>https://goproxy.cn</proxy>
   </component>
   <component name="WindowStateProjectService">
-    <state width="3798" height="661" key="GridCell.Tab.0.bottom" timestamp="1583773261391">
+    <state width="3798" height="763" key="GridCell.Tab.0.bottom" timestamp="1584284786382">
       <screen x="0" y="0" width="3840" height="2160" />
     </state>
-    <state width="3798" height="661" key="GridCell.Tab.0.bottom/0.0.3840.2160@0.0.3840.2160" timestamp="1583773261391" />
-    <state width="3798" height="661" key="GridCell.Tab.0.center" timestamp="1583773261390">
+    <state width="3798" height="763" key="GridCell.Tab.0.bottom/0.0.3840.2160@0.0.3840.2160" timestamp="1584284786382" />
+    <state width="3798" height="763" key="GridCell.Tab.0.center" timestamp="1584284786380">
       <screen x="0" y="0" width="3840" height="2160" />
     </state>
-    <state width="3798" height="661" key="GridCell.Tab.0.center/0.0.3840.2160@0.0.3840.2160" timestamp="1583773261389" />
-    <state width="3798" height="661" key="GridCell.Tab.0.left" timestamp="1583773261389">
+    <state width="3798" height="763" key="GridCell.Tab.0.center/0.0.3840.2160@0.0.3840.2160" timestamp="1584284786380" />
+    <state width="3798" height="763" key="GridCell.Tab.0.left" timestamp="1584284786379">
       <screen x="0" y="0" width="3840" height="2160" />
     </state>
-    <state width="3798" height="661" key="GridCell.Tab.0.left/0.0.3840.2160@0.0.3840.2160" timestamp="1583773261389" />
-    <state width="3798" height="661" key="GridCell.Tab.0.right" timestamp="1583773261390">
+    <state width="3798" height="763" key="GridCell.Tab.0.left/0.0.3840.2160@0.0.3840.2160" timestamp="1584284786379" />
+    <state width="3798" height="763" key="GridCell.Tab.0.right" timestamp="1584284786381">
       <screen x="0" y="0" width="3840" height="2160" />
     </state>
-    <state width="3798" height="661" key="GridCell.Tab.0.right/0.0.3840.2160@0.0.3840.2160" timestamp="1583773261390" />
+    <state width="3798" height="763" key="GridCell.Tab.0.right/0.0.3840.2160@0.0.3840.2160" timestamp="1584284786381" />
+    <state width="3798" height="807" key="GridCell.Tab.1.bottom" timestamp="1584272234129">
+      <screen x="0" y="0" width="3840" height="2160" />
+    </state>
+    <state width="3798" height="807" key="GridCell.Tab.1.bottom/0.0.3840.2160@0.0.3840.2160" timestamp="1584272234129" />
+    <state width="3798" height="807" key="GridCell.Tab.1.center" timestamp="1584272234126">
+      <screen x="0" y="0" width="3840" height="2160" />
+    </state>
+    <state width="3798" height="807" key="GridCell.Tab.1.center/0.0.3840.2160@0.0.3840.2160" timestamp="1584272234126" />
+    <state width="3798" height="807" key="GridCell.Tab.1.left" timestamp="1584272234125">
+      <screen x="0" y="0" width="3840" height="2160" />
+    </state>
+    <state width="3798" height="807" key="GridCell.Tab.1.left/0.0.3840.2160@0.0.3840.2160" timestamp="1584272234125" />
+    <state width="3798" height="807" key="GridCell.Tab.1.right" timestamp="1584272234128">
+      <screen x="0" y="0" width="3840" height="2160" />
+    </state>
+    <state width="3798" height="807" key="GridCell.Tab.1.right/0.0.3840.2160@0.0.3840.2160" timestamp="1584272234128" />
     <state x="1429" y="719" key="SettingsEditor" timestamp="1583773616795">
       <screen x="0" y="0" width="3840" height="2160" />
     </state>
     <state x="1429" y="719" key="SettingsEditor/0.0.3840.2160@0.0.3840.2160" timestamp="1583773616795" />
+    <state x="1585" y="511" width="670" height="676" key="search.everywhere.popup" timestamp="1584267703533">
+      <screen x="0" y="0" width="3840" height="2160" />
+    </state>
+    <state x="1585" y="511" width="670" height="676" key="search.everywhere.popup/0.0.3840.2160@0.0.3840.2160" timestamp="1584267703533" />
     <state x="1650" y="924" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1583773484652">
       <screen x="0" y="0" width="3840" height="2160" />
     </state>
