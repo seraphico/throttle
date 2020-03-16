@@ -22,7 +22,7 @@ func (tcm *TcMgr) qdiscRootHandle(dev string) (err error) {
 		cmd     *exec.Cmd
 		command string
 	)
-	command = fmt.Sprintf(`tc qdisc add dev %s root handle %s:%s htb default %s`, dev, MAJOR, MINOR, DEFAULT)
+	command = fmt.Sprintf(`tc qdisc add dev %s root handle %s:%s htb default %s`, dev, DOWNMAJOR, DOWNMINOR, DOWNDEFAULT)
 	cmd = exec.Command(`/usr/bin/sh`, `-c`, command)
 	if _, err = cmd.Output(); err != nil {
 		return

@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"github.com/urfave/cli"
 	"os"
 	"throttle/modules"
@@ -35,18 +34,14 @@ func main() {
 					return cli.NewExitError(err, 1)
 				}
 
-				switch c.String(`d`) {
-				case `down`:
-					if err = modules.GlobTcProMgr.Add(
-						c.String(`i`),
-						c.String(`r`),
-						c.String(`C`),
-						c.String(`t`),
-					); err != nil {
-						return cli.NewExitError(err, 1)
-					}
-				case `up`:
-					fmt.Println(`run up rules`)
+				if err = modules.GlobTcProMgr.Add(
+					c.String(`i`),
+					c.String(`r`),
+					c.String(`C`),
+					c.String(`t`),
+					c.String(`d`),
+				); err != nil {
+					return cli.NewExitError(err, 1)
 				}
 
 				return
@@ -65,7 +60,7 @@ func main() {
 				&cli.StringFlag{
 					Name:  "direction,d",
 					Usage: "用于指定限制适用的方向",
-					Value: "up",
+					Value: "down",
 				},
 				&cli.StringFlag{
 					Name:  "rate,r",
@@ -90,7 +85,7 @@ func main() {
 
 				if err = modules.GlobTcProMgr.Show(
 					c.String(`i`),
-					//c.String(`t`),
+					c.String(`t`),
 				); err != nil {
 					return cli.NewExitError(err, 1)
 				}
@@ -105,7 +100,35 @@ func main() {
 				&cli.StringFlag{
 					Name:  "network,t",
 					Usage: "指定查询的IP地址段",
-					Value: "127.0.0.1/8",
+					Value: "all",
+				},
+			},
+		},
+		{
+			Name:  `rm`,
+			Usage: `删除规则`,
+			Action: func(c *cli.Context) (err error) {
+				if err = InitThrottleProcess(); err != nil {
+					return cli.NewExitError(err, 1)
+				}
+				if err = modules.GlobTcProMgr.Delete(
+					c.String(`i`),
+					c.String(`t`),
+				); err != nil {
+					return cli.NewExitError(err, 1)
+				}
+				return
+			},
+			Flags: []cli.Flag{
+				&cli.StringFlag{
+					Name:  "interface,i",
+					Usage: "指定网络接口",
+					Value: "eth0",
+				},
+				&cli.StringFlag{
+					Name:  "network,t",
+					Usage: "指定网段或者ip",
+					Value: "127.0.0.1",
 				},
 			},
 		},
@@ -118,6 +141,9 @@ func InitThrottleProcess() (err error) {
 		return
 	}
 	if err = modules.InitTcProMgr(); err != nil {
+		return
+	}
+	if err = modules.InitTableMgr(); err != nil {
 		return
 	}
 	return

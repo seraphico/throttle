@@ -56,7 +56,7 @@ func (tcm *TcMgr) classfulcreate(dev, classid, rate, ceil string) (err error) {
 
 	cmd = fmt.Sprintf(`tc class add dev %s parent %s: classid %s htb rate %smbit ceil %smbit`,
 		dev,
-		MAJOR,
+		DOWNMAJOR,
 		classid,
 		rate,
 		ceil,
@@ -100,4 +100,19 @@ func (tcm *TcMgr) classRate(dev, classid string) (rs map[string]string, err erro
 	rs[`rate`] = outstrlist[7]
 	rs[`ceil`] = outstrlist[9]
 	return
+}
+
+//tc class del dev enp0s3 classid 1:127
+func (tcm *TcMgr) ClassFulDelet(dev, classid string) (err error) {
+	var (
+		cmd     *exec.Cmd
+		command string
+	)
+	command = fmt.Sprintf(`tc class del dev %s classid %s`, dev, classid)
+	cmd = exec.Command(`/usr/bin/sh`, `-c`, command)
+	if _, err = cmd.Output(); err != nil {
+		return
+	}
+	return
+
 }

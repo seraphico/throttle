@@ -14,12 +14,11 @@ type TcMgr struct {
 }
 
 const (
-	MAJOR       = `1`
-	MINOR       = `0`
-	DEFAULT     = `1000`
-	CLASSFULID  = `10`
-	DEFAULTRATE = `10` //MB
-	DEFAULTCEIL = `12` //MB
+	DOWNMAJOR   = `1`
+	DOWNMINOR   = `0`
+	DOWNDEFAULT = `1000`
+
+	UPMAJOR = ``
 )
 
 var GlobTcMgr *TcMgr

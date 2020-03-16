@@ -1,10 +1,10 @@
 package modules
 
 import (
+	"errors"
 	"fmt"
-	"github.com/olekukonko/tablewriter"
 	"math/rand"
-	"os"
+	"net"
 	"strconv"
 	"throttle/tc"
 	"time"
@@ -19,7 +19,8 @@ func InitTcProMgr() (err error) {
 	return
 }
 
-func (tcpm *TcProMgr) Add(dev string, rate string, ceil string, dst string) (err error) {
+//ud //UP Or Down
+func (tcpm *TcProMgr) Add(dev string, rate string, ceil string, d string, ud string) (err error) {
 
 	var classid string
 	var qdiscid string
@@ -27,12 +28,12 @@ func (tcpm *TcProMgr) Add(dev string, rate string, ceil string, dst string) (err
 		return
 	}
 
-	classid = fmt.Sprintf(`%s:%s`, tc.MAJOR, strconv.Itoa(tcpm.random()))
+	classid = fmt.Sprintf(`%s:%s`, tc.DOWNMAJOR, strconv.Itoa(tcpm.random()))
 	if err = tc.GlobTcMgr.Classful(dev, classid, rate, ceil); err != nil {
 		return
 	}
-	qdiscid = fmt.Sprintf(`%s:`, tc.MAJOR)
-	if err = tc.GlobTcMgr.Filter(dev, qdiscid, dst, classid); err != nil {
+	qdiscid = fmt.Sprintf(`%s:`, tc.DOWNMAJOR)
+	if err = tc.GlobTcMgr.Filter(dev, qdiscid, d, classid, ud); err != nil {
 		return
 	}
 	return
@@ -44,20 +45,50 @@ func (tcm *TcProMgr) random() (r int) {
 	return
 }
 
-func (tcm *TcProMgr) Show(dev string) (err error) {
-/*	if err = tc.GlobTcMgr.ClassfulShow(dev); err != nil {
+func (tcm *TcProMgr) Show(dev string, netstr string) (err error) {
+	/*	if err = tc.GlobTcMgr.ClassfulShow(dev); err != nil {
 		return
 	}*/
 	var data [][]string
-	if data, err = tc.GlobTcMgr.FilterShows(dev); err != nil {
+	switch netstr {
+	case `all`:
+		if data, err = tc.GlobTcMgr.FilterShows(dev); err != nil {
+			return
+		}
+	default:
+		if data, err = tc.GlobTcMgr.FilterShowsWithString(dev, netstr); err != nil {
+			return
+		}
+	}
+
+	if err = GlobTableMgr.Out(data); err != nil {
 		return
 	}
-	table := tablewriter.NewWriter(os.Stdout)
-	table.SetHeader([]string{`qdiscId`, `classId`, `filterId`, `rate`, `ceil`, `Address segment`})
-	table.SetFooter([]string{``,``,``,``, `Total Filters`, strconv.Itoa(len(data))})
-	table.SetAutoMergeCells(true)
-	table.SetRowLine(true)
-	table.AppendBulk(data)
-	table.Render()
+
+	return
+}
+
+func (tcm *TcProMgr) Delete(dev string, netstr string) (err error) {
+	var netip net.IP
+	var datas [][]string
+	if _, _, err = net.ParseCIDR(netstr); err != nil {
+		if netip = net.ParseIP(netstr); netip == nil {
+			return errors.New(`Illegal IP address`)
+		}
+		return
+	}
+
+	if datas, err = tc.GlobTcMgr.FilterShowsWithString(dev, netstr); err != nil {
+		return
+	}
+	for _, data := range datas {
+		if err = tc.GlobTcMgr.FilterDelete(dev, data[2]); err != nil {
+			return
+		}
+
+		if err = tc.GlobTcMgr.ClassFulDelet(dev, data[1]); err != nil {
+			return
+		}
+	}
 	return
 }
