@@ -1,5 +1,7 @@
 # throttle
 
+#### 简介：
+    一个基于TC的网络限速简化工具
 #### 编译：
 ```go
     CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -v -a -ldflags '-s -w' \-o throttle app/app.go  && scp throttle root@192.168.1.8:/root/
